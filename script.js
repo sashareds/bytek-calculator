@@ -148,7 +148,7 @@ $(document).ready(function() {
 		              // gathers checked checkbox values and saves them in variable "result"
 		              options = $('#savingsContainer').find('.savingOption:checked');
 		                            
-		              if (options.length >2 ){
+		              if (options.length >2){
 		                  result = defaultDiscount;
 		              }else if (options.length>0){
 		
@@ -163,7 +163,7 @@ $(document).ready(function() {
 		                  return false;
 		              }
 		              return result;
-		            }
+		            };
 		      
 		            $('#btnCalculateSavings').click(function(e) { 
 		                    var calculatorResult;
@@ -225,7 +225,6 @@ $(document).ready(function() {
 				
 				function slideContentLoaded(args) {
 					
-;
 					
 					/* indicator */
 					$(args.sliderObject).parent().find('.iosSliderButtons .button').removeClass('selected');

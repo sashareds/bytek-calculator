@@ -3,6 +3,7 @@
 <head>
 
 <meta charset=utf-8 />
+
 <title>Bytek Discount Calculator</title>
 
 	<link href="http://bytek.dev.redslab.ie/core/css/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />
@@ -69,7 +70,7 @@
 					<span id="checkedPrinters"> </span> <!-- container for calculator results/safings -->
 				</h3>
 			<hr>
-			<p>Fill out form bellow to request a call back</p>
+			<p>To see how simple this process is fill in your details below</p>
 				
 				
 				<div class="mail">

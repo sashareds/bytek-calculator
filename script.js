@@ -31,7 +31,7 @@ $(document).ready(function() {
 		
 		                      
 		
-		                            var valid = '';
+                  var valid = '';
 									var isr = ' is required.';
 									var savings = $("#result").text();
 									var name = $("#name").val();
@@ -156,17 +156,27 @@ $(document).ready(function() {
 		
 		                  val2 = options.eq(1) && +options.eq(1).val();
 		
-		                  result = getSavings(val1, val2);
-		                  
-		                  checkedPrinters = options.eq(0).val();
+		                  result = getSavings(val1, val2); 
 		              }else{
 		                  return false;
 		              }
 		              return result;
 		            };
+
+		            function getSelectedPrinters(){
+		              	var checkedPrinters,container,results=[];
+ 						  			container = $('#savingsContainer');
+	                  checkedPrinters = container.find('.savingOption:checked');
+	               
+	                  $.each(checkedPrinters,function(i,item){
+	                  	results.push(container.find('label[for="'+item.id+'"]').text());
+	                  })
+
+	                  return results.join(',');
+		            };
 		      
 		            $('#btnCalculateSavings').click(function(e) { 
-		                    var calculatorResult;
+		                    var calculatorResult,selectedPrinters;
 		
 		                    e = e || event; 
 		                    e.preventDefault();
@@ -175,7 +185,10 @@ $(document).ready(function() {
 		                    
 		                    if (calculatorResult){
 		                      $("#result").text(calculatorResult);
-		                      $("#checkedPrinters").text(checkedPrinters); // inserts result value in to html div#results
+
+		                    	selectedPrinters = getSelectedPrinters();
+
+		                      $("#checkedPrinters").text(selectedPrinters); // inserts result value in to html div#results
 		                      // Calling jquery dialog/popup window and populate calculator results into it onClick
 		                    $("#calculatorPopup" ).dialog( "open" ); 
 		                    }else{
